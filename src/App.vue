@@ -1,28 +1,70 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="https://i.etsystatic.com/15492164/r/il/f106ee/1903066961/il_570xN.1903066961_kh00.jpg">
+    <h1 style="margin-top: -40px; margin-bottom: 30px">Keep on the BrianLands</h1>
+    <label for="stats">
+      <input type = "radio" name = "display" value = "stats" v-model="displayToggle">Party Stats
+    </label>
+    <label for="characters">
+      <input type = "radio" name = "display" value = "characters" v-model="displayToggle">Character Stats
+    </label>
+    <Stats v-show = "displayToggle === 'stats'" :stats = stats />
+    <Characters v-show = "displayToggle === 'characters'" :characterData = characterData />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Characters from './components/Characters.vue'
+import Stats from './components/Stats.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Characters,
+    Stats
+  },
+  data: function() {
+    return {
+      displayToggle: "stats",
+      stats: {
+        monsters: 0,
+        successes: 0,
+        failures: 0
+      },
+      characterData: {
+        Brian: {
+          monsters: 0,
+          successes: 0,
+          failures: 0
+        },
+        John: {
+          monsters: 0,
+          successes: 0,
+          failures: 0
+        },
+        Rufus: {
+          monsters: 0,
+          successes: 0,
+          failures: 0
+        },
+        Ffeel: {
+          monsters: 0,
+          successes: 0,
+          failures: 0
+        }
+      }
+    }
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica,
+    Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: -60px;
+  font-size: 30px;
 }
 </style>
