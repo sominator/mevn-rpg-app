@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="https://i.etsystatic.com/15492164/r/il/f106ee/1903066961/il_570xN.1903066961_kh00.jpg">
+    <img id="logo" alt="DnD logo" src="https://i.etsystatic.com/15492164/r/il/f106ee/1903066961/il_570xN.1903066961_kh00.jpg">
     <h1 style="margin-top: -40px; margin-bottom: 30px">Keep on the BrianLands</h1>
     <label for="stats">
       <input type = "radio" name = "display" value = "stats" v-model="displayToggle">Party Stats
@@ -66,5 +66,9 @@ export default {
   color: #2c3e50;
   margin-top: -60px;
   font-size: 30px;
+}
+
+#logo {
+  max-width: 100%    
 }
 </style>
