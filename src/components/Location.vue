@@ -4,29 +4,11 @@
             <hr class="orange-border" />
             <div class="section-left">
                 <div class="creature-heading">
-                    <h1>Party Stats</h1>
-                    <h2>Brian sux!</h2>
+                    <h1>{{location}}</h1>
+                    <h2>{{description}}</h2>
                     <svg height="5" width="100%" class="tapered-rule">
                         <polyline points="0,0 400,2.5 0,5"></polyline>
                     </svg>
-                </div>
-                <div class="top-stats">
-                    <div class="property-line first">
-                        <h4>Monsters Killed: </h4>
-                        <p>{{partyStats.monsters}}</p>
-                    </div>
-                    <div class="property-line">
-                        <h4>Critical Successes Rolled: </h4>
-                        <p>{{partyStats.successes}}</p>
-                    </div>
-                    <div class="property-line">
-                        <h4>Critical Failures Rolled: </h4>
-                        <p>{{partyStats.failures}}</p>
-                    </div>
-                    <div class="property-line last">
-                        <h4>NPCs Convinced: </h4>
-                        <p>{{partyStats.npcs}}</p>
-                    </div>
                 </div>
             </div>
             <hr class="orange-border bottom" />
@@ -37,27 +19,10 @@
 <script>
 
     export default {
-        name: 'Stats',
+        name: 'Location',
         props: {
-            characterData: Object
-        },
-        data: function () {
-            return {
-
-            }
-        },
-        methods: {
-        },
-        computed: {
-            partyStats: function () {
-                let stats = {
-                    monsters: this.characterData.Brian.monsters + this.characterData.Tenebrius.monsters + this.characterData.Rufus.monsters + this.characterData.Ffeel.monsters,
-                    successes: this.characterData.Brian.successes + this.characterData.Tenebrius.successes + this.characterData.Rufus.successes + this.characterData.Ffeel.successes,
-                    failures: this.characterData.Brian.failures + this.characterData.Tenebrius.failures + this.characterData.Rufus.failures + this.characterData.Ffeel.failures,
-                    npcs: this.characterData.Brian.npcs + this.characterData.Tenebrius.npcs + this.characterData.Rufus.npcs + this.characterData.Ffeel.npcs
-                }
-                return stats;
-            }
+            location: String,
+            description: String
         }
     }
 </script>

@@ -1,0 +1,58 @@
+{
+  "characters": {
+    "Brian": {
+      "monsters": 0,
+      "successes": 0,
+      "failures": 0,
+      "npcs": 0
+    },
+    "Tenebrius": {
+      "monsters": 1,
+      "successes": 1,
+      "failures": 0,
+      "npcs": 0
+    },
+    "Rufus": {
+      "monsters": 0,
+      "successes": 0,
+      "failures": 0,
+      "npcs": 0
+    },
+    "Ffeel": {
+      "monsters": 0,
+      "successes": 1,
+      "failures": 3,
+      "npcs": 2
+    }
+  },
+  "npcs": {
+    "Rosser Border Guard": "Named after their commander & wear black tabards",
+    "Seruto": "Corporal of the Watch",
+    "Bumbo Wickman": "Tavernkeep who likes honey mead & gossip",
+    "Stonemount Keep Watch": "Wear blue tabards",
+    "Andrew Rossar": "The Castellan",
+    "Queen Chrysali": "Of Tarrine",
+    "Xentad Wickman": "Tavernkeep's wife",
+    "Anayla & Herbossa": "Innkeeps",
+    "Gooktaag": "Guildmaster",
+    "Tor": "Guildmaster's son",
+    "Kalid": "Trader",
+    "Demetrios & Krantor": "Kalid's sons",
+    "Gor": "Blacksmith",
+    "Zickamander": "Captain of the Guard & creeper",
+    "Gadroth": "Soldier in the barracks"
+  },
+  "locations": {
+    "Tarrine": "The kingdom at large",
+    "Stonemount Keep": "You are here",
+    "Goblin Water Valley": "The water is yellow",
+    "Dark Woods": "They talk to Rufus",
+    "The Stretching Goat": "Tavern",
+    "The Mountain Road": "Inn",
+    "Wizard's Tower": "South of the Golin Water river"
+  },
+  "quests": {
+    "Find the Wizard's Tower": "And bring back valuable tomes for the Guildmaster",
+    "Kill the Spiders": "South of the fens and cliffs"
+  }
+}
