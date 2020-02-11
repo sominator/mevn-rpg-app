@@ -75,6 +75,7 @@
         letter-spacing: 1px;
         font-variant: small-caps;
         font-weight: bold;
+        font-size: 16px;
         color: #922610;
         border: 1px solid #000;
         border-radius: 5px;
@@ -86,6 +87,9 @@
     }
     button:focus {
         outline: none;
+    }
+    #logo {
+        max-width: 30%;
     }
     #map {
         max-width: 40%;

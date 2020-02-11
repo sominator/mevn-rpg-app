@@ -1,16 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-<<<<<<< HEAD
     "\\public",
-    "\\src",
-    "\\src\\components"
+    "\\src\\components",
+    "\\src\\dist"
   ],
-  "SelectedNode": "\\src\\components\\Characters.vue",
-=======
-    "\\src"
-  ],
-  "SelectedNode": "\\src\\App.vue",
->>>>>>> d2cbbbb8f42481d294a2764316e534d0549abb20
   "PreviewInSolutionExplorer": false
 }

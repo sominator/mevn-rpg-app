@@ -36,7 +36,9 @@
             <div class="section-left">
                 <div class="creature-heading">
                     <h1>Tenebrius</h1>
-                    <h2>John sux!</h2>
+                    <h2>Tenebrus has a shiny, perfect coat of pitch black fur covering his body, and pink little footpads. He has green cat-eyes and sharp, bright white teeth.</h2>
+                    <h2>As a pantera, Tenebrus stands a shocking 6'8" tall, with long cat legs and soft, pink little pads on his palms and feet. At will he can deploy razor sharp claws to shred his enemies or their furniture. He does not really get hoomans, but is learning.</h2>
+                    <h2>Tenebrus was a trainee of a secretive cult of assassins called The Dark Way, which trains its members to draw on the power of the shadow world. But he left and became a bounty hunter, tracking down criminals, cheats, thieves, runaway wives and such and returning them in whatever condition was required.</h2>
                     <svg height="5" width="100%" class="tapered-rule">
                         <polyline points="0,0 400,2.5 0,5"></polyline>
                     </svg>
@@ -85,9 +87,13 @@
                         <h4>Critical Failures Rolled: </h4>
                         <p>{{characterData.Rufus.failures}}</p>
                     </div>
-                    <div class="property-line last">
+                    <div class="property-line">
                         <h4>NPCs Convinced of Things They Shouldn't: </h4>
                         <p>{{characterData.Rufus.npcs}}</p>
+                    </div>
+                    <div class="property-line last">
+                        <h4>Times Changed into a Spider: </h4>
+                        <p>{{characterData.Rufus.spiders}}</p>
                     </div>
                 </div>
             </div>
