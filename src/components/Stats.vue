@@ -55,10 +55,10 @@
         computed: {
             partyStats: function () {
                 let stats = {
-                    monsters: this.characterData.Brian.monsters + this.characterData.Tenebrius.monsters + this.characterData.Rufus.monsters + this.characterData.Ffeel.monsters,
-                    successes: this.characterData.Brian.successes + this.characterData.Tenebrius.successes + this.characterData.Rufus.successes + this.characterData.Ffeel.successes,
-                    failures: this.characterData.Brian.failures + this.characterData.Tenebrius.failures + this.characterData.Rufus.failures + this.characterData.Ffeel.failures,
-                    npcs: this.characterData.Brian.npcs + this.characterData.Tenebrius.npcs + this.characterData.Rufus.npcs + this.characterData.Ffeel.npcs,
+                    monsters: this.characterData.Brian.monsters + this.characterData.Tenebrus.monsters + this.characterData.Rufus.monsters + this.characterData.Ffeel.monsters,
+                    successes: this.characterData.Brian.successes + this.characterData.Tenebrus.successes + this.characterData.Rufus.successes + this.characterData.Ffeel.successes,
+                    failures: this.characterData.Brian.failures + this.characterData.Tenebrus.failures + this.characterData.Rufus.failures + this.characterData.Ffeel.failures,
+                    npcs: this.characterData.Brian.npcs + this.characterData.Tenebrus.npcs + this.characterData.Rufus.npcs + this.characterData.Ffeel.npcs,
                     spiders: this.characterData.Rufus.spiders
                 }
                 return stats;
