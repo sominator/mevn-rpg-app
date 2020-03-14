@@ -20,7 +20,7 @@
             <button v-on:click="questToggle='add'">Add Quest</button>
             <button v-on:click="questToggle='view'; getQuests()">View Quests</button>
             <AddQuest v-show="questToggle==='add'" />
-            <div class="journal" v-show="questToggle==='view'" :key="newKey">
+            <div class="journal" v-show="questToggle==='view'">
                 <Quest v-for="(quest, index) in questData" :key="index" :quest="quest" @getQuests="getQuests"/>  
             </div>
         </div>
@@ -57,8 +57,7 @@
                 characterData: json.characters,
                 npcData: json.npcs,
                 locationData: json.locations,
-                questData: null,
-                newKey: 0
+                questData: null
             }
         },
         methods: {
