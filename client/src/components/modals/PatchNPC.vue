@@ -4,17 +4,20 @@
             <hr class="orange-border" />
             <div class="section-left">
                 <div class="creature-heading">
-                    <div>
-                        <h1>{{location.name}}</h1>
-                        <h2>{{location.description}}</h2>
+                    <div style="text-align: center">
+                        <h1>Edit NPC</h1>
+                    </div>
+                    <div style="text-align: center">
+                        <input type="text" v-model="newName" placeholder="NPC Name" />
+                        <input type="text" v-model="newDescription" placeholder="NPC Description" />
                     </div>
                     <svg height="5" width="100%" class="tapered-rule">
                         <polyline points="0,0 400,2.5 0,5"></polyline>
                     </svg>
                 </div>
-                <div>
-                    <button v-on:click="patchLocation">Edit</button>
-                    <button v-on:click="deleteLocation">Delete</button>
+                <div style="text-align: center">
+                    <button v-on:click="patchNpc">Edit NPC</button>
+                    <button v-on:click="cancel">Cancel</button>
                 </div>
             </div>
             <hr class="orange-border bottom" />
@@ -23,17 +26,30 @@
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
-        name: 'Location',
+        name: 'PatchNPC',
         props: {
-            location: Object
+            npcId: String
+        },
+        data: function () {
+            return {
+                newName: null,
+                newDescription: null
+            }
         },
         methods: {
-            patchLocation: function () {
-                this.$emit('patchLocation', this.location._id);
+            patchNpc: function () {
+                 axios
+                    .patch('http://localhost:3000/npcs/' + this.npcId, {
+                        name: this.newName,
+                        description: this.newDescription
+                    });
+                this.$emit('changeToggle', 'npcs');
             },
-            deleteLocation: function () {
-                this.$emit('deleteLocation', this.location._id);
+            cancel: function () {
+                this.$emit('changeToggle', 'npcs');
             }
         }
     }
@@ -60,7 +76,7 @@
         margin-top: 30px;
         display: inline-block;
         vertical-align: top;
-        width: 27%;
+        width: 10%;
         min-width: 280px;
         background: #FDF1DC;
         padding: 5px 10px 20px;

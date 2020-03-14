@@ -4,17 +4,18 @@
             <hr class="orange-border" />
             <div class="section-left">
                 <div class="creature-heading">
-                    <div>
-                        <h1>{{location.name}}</h1>
-                        <h2>{{location.description}}</h2>
+                    <div style="text-align: center">
+                        <h1>Add Location</h1>
+                        <input type="text" v-model="name" placeholder="Location Name" /><br/>
+                        <input type="text" v-model="description" placeholder="Location Description" /><br/><br/>
                     </div>
                     <svg height="5" width="100%" class="tapered-rule">
                         <polyline points="0,0 400,2.5 0,5"></polyline>
                     </svg>
                 </div>
-                <div>
-                    <button v-on:click="patchLocation">Edit</button>
-                    <button v-on:click="deleteLocation">Delete</button>
+                <div style="text-align: center">
+                    <button v-on:click="postLocation">Add Location</button>
+                    <button v-on:click="cancel">Cancel</button>
                 </div>
             </div>
             <hr class="orange-border bottom" />
@@ -23,17 +24,27 @@
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
-        name: 'Location',
-        props: {
-            location: Object
+        name: 'AddLocation',
+        data: function () {
+            return {
+                name: null,
+                description: null
+            }
         },
         methods: {
-            patchLocation: function () {
-                this.$emit('patchLocation', this.location._id);
+            postLocation: function () {
+                axios
+                    .post('http://localhost:3000/locations', {
+                        name: this.name,
+                        description: this.description
+                    });
+                this.$emit("changeToggle", "locations");
             },
-            deleteLocation: function () {
-                this.$emit('deleteLocation', this.location._id);
+            cancel: function () {
+                this.$emit("changeToggle", "locations");
             }
         }
     }
@@ -60,7 +71,7 @@
         margin-top: 30px;
         display: inline-block;
         vertical-align: top;
-        width: 27%;
+        width: 10%;
         min-width: 280px;
         background: #FDF1DC;
         padding: 5px 10px 20px;

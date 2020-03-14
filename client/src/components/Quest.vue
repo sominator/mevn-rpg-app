@@ -4,24 +4,17 @@
             <hr class="orange-border" />
             <div class="section-left">
                 <div class="creature-heading">
-                    <div v-show="editing===false">
+                    <div>
                         <h1>{{quest.name}}</h1>
                         <h2>{{quest.description}}</h2>
-                    </div>
-                    <div v-show="editing===true" style="text-align: center">
-                        <input type="text" v-model="newName" placeholder="Quest Name"/>
-                        <input type="text" v-model="newDescription" placeholder="Quest Description" />
                     </div>
                     <svg height="5" width="100%" class="tapered-rule">
                         <polyline points="0,0 400,2.5 0,5"></polyline>
                     </svg>
                 </div>
-                <div v-show="editing===false">
-                    <button v-on:click="editing=true">Edit</button>
+                <div>
+                    <button v-on:click="patchQuest">Edit</button>
                     <button v-on:click="deleteQuest">Delete</button>
-                </div>
-                <div v-show="editing===true" style="text-align: center">
-                    <button v-on:click="editing=false; patchQuest()">Done</button>
                 </div>
             </div>
             <hr class="orange-border bottom" />
@@ -30,33 +23,17 @@
 </template>
 
 <script>
-    import axios from 'axios';
-
     export default {
         name: 'Quest',
-        data: function () {
-            return {
-                editing: false,
-                newName: null,
-                newDescription: null,
-            }
-        },
         props: {
             quest: Object
         },
         methods: {
             patchQuest: function () {
-                axios
-                    .patch('http://localhost:3000/quests/' + this.quest._id, {
-                        name: this.newName,
-                        description: this.newDescription
-                    });
-                this.$emit('getQuests');
+                this.$emit('patchQuest', this.quest._id);
             },
             deleteQuest: function () {
-                axios
-                    .delete('http://localhost:3000/quests/' + this.quest._id);
-                this.$emit('getQuests');
+                this.$emit('deleteQuest', this.quest._id);
             }
         }
     }

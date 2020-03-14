@@ -4,17 +4,20 @@
             <hr class="orange-border" />
             <div class="section-left">
                 <div class="creature-heading">
-                    <div>
-                        <h1>{{location.name}}</h1>
-                        <h2>{{location.description}}</h2>
+                    <div style="text-align: center">
+                        <h1>Edit Quest</h1>
+                    </div>
+                    <div style="text-align: center">
+                        <input type="text" v-model="newName" placeholder="Quest Name" />
+                        <input type="text" v-model="newDescription" placeholder="Quest Description" />
                     </div>
                     <svg height="5" width="100%" class="tapered-rule">
                         <polyline points="0,0 400,2.5 0,5"></polyline>
                     </svg>
                 </div>
-                <div>
-                    <button v-on:click="patchLocation">Edit</button>
-                    <button v-on:click="deleteLocation">Delete</button>
+                <div style="text-align: center">
+                    <button v-on:click="patchQuest">Edit Quest</button>
+                    <button v-on:click="cancel">Cancel</button>
                 </div>
             </div>
             <hr class="orange-border bottom" />
@@ -23,17 +26,30 @@
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
-        name: 'Location',
+        name: 'PatchQuest',
         props: {
-            location: Object
+            questId: String
+        },
+        data: function () {
+            return {
+                newName: null,
+                newDescription: null
+            }
         },
         methods: {
-            patchLocation: function () {
-                this.$emit('patchLocation', this.location._id);
+            patchQuest: function () {
+                 axios
+                    .patch('http://localhost:3000/quests/' + this.questId, {
+                        name: this.newName,
+                        description: this.newDescription
+                    });
+                this.$emit('changeToggle', 'quests');
             },
-            deleteLocation: function () {
-                this.$emit('deleteLocation', this.location._id);
+            cancel: function () {
+                this.$emit('changeToggle', 'quests');
             }
         }
     }
@@ -60,7 +76,7 @@
         margin-top: 30px;
         display: inline-block;
         vertical-align: top;
-        width: 27%;
+        width: 10%;
         min-width: 280px;
         background: #FDF1DC;
         padding: 5px 10px 20px;

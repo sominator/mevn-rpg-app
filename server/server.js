@@ -12,7 +12,13 @@ db.once('open', () => console.log('Connected to database!'));
 server.use(express.json());
 server.use(cors());
 
-const router = require('./routes/quests');
-server.use('/quests', router);
+const locationRouter = require('./routes/locations');
+server.use('/locations', locationRouter);
+
+const npcRouter = require('./routes/npcs');
+server.use('/npcs', npcRouter);
+
+const questRouter = require('./routes/quests');
+server.use('/quests', questRouter);
 
 server.listen(3000, () => console.log("Server started!"));

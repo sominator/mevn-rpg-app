@@ -1,14 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\client",
     "\\client\\src",
     "\\client\\src\\components",
-    "\\client\\src\\components\\AddData",
-    "\\server",
+    "\\client\\src\\components\\Modals",
     "\\server\\models",
     "\\server\\routes"
   ],
-  "SelectedNode": "\\server\\routes\\Quests.js",
   "PreviewInSolutionExplorer": false
 }

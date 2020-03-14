@@ -4,11 +4,17 @@
             <hr class="orange-border" />
             <div class="section-left">
                 <div class="creature-heading">
-                    <h1>{{npc}}</h1>
-                    <h2>{{description}}</h2>
+                    <div>
+                        <h1>{{npc.name}}</h1>
+                        <h2>{{npc.description}}</h2>
+                    </div>
                     <svg height="5" width="100%" class="tapered-rule">
                         <polyline points="0,0 400,2.5 0,5"></polyline>
                     </svg>
+                </div>
+                <div>
+                    <button v-on:click="patchNpc">Edit</button>
+                    <button v-on:click="deleteNpc">Delete</button>
                 </div>
             </div>
             <hr class="orange-border bottom" />
@@ -17,12 +23,18 @@
 </template>
 
 <script>
-
     export default {
         name: 'NPC',
         props: {
-            npc: String,
-            description: String
+            npc: Object
+        },
+        methods: {
+            patchNpc: function () {
+                this.$emit('patchNpc', this.npc._id);
+            },
+            deleteNpc: function () {
+                this.$emit('deleteNpc', this.npc._id);
+            }
         }
     }
 </script>
@@ -269,4 +281,5 @@
             margin: 20px 0;
         }
     }
+
 </style>

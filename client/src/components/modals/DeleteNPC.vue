@@ -4,17 +4,16 @@
             <hr class="orange-border" />
             <div class="section-left">
                 <div class="creature-heading">
-                    <div>
-                        <h1>{{location.name}}</h1>
-                        <h2>{{location.description}}</h2>
+                    <div style="text-align: center">
+                        <h1>Delete NPC?</h1>
                     </div>
                     <svg height="5" width="100%" class="tapered-rule">
                         <polyline points="0,0 400,2.5 0,5"></polyline>
                     </svg>
                 </div>
-                <div>
-                    <button v-on:click="patchLocation">Edit</button>
-                    <button v-on:click="deleteLocation">Delete</button>
+                <div style="text-align: center">
+                    <button v-on:click="deleteNpc">Delete</button>
+                    <button v-on:click="cancel">Cancel</button>
                 </div>
             </div>
             <hr class="orange-border bottom" />
@@ -23,17 +22,21 @@
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
-        name: 'Location',
+        name: 'DeleteNPC',
         props: {
-            location: Object
+            npcId: String
         },
         methods: {
-            patchLocation: function () {
-                this.$emit('patchLocation', this.location._id);
+            deleteNpc: function () {
+                axios
+                    .delete('http://localhost:3000/npcs/' + this.npcId);
+                this.$emit('changeToggle', 'npcs');
             },
-            deleteLocation: function () {
-                this.$emit('deleteLocation', this.location._id);
+            cancel: function () {
+                this.$emit('changeToggle', 'npcs');
             }
         }
     }
@@ -60,7 +63,7 @@
         margin-top: 30px;
         display: inline-block;
         vertical-align: top;
-        width: 27%;
+        width: 10%;
         min-width: 280px;
         background: #FDF1DC;
         padding: 5px 10px 20px;

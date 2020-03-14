@@ -5,16 +5,15 @@
             <div class="section-left">
                 <div class="creature-heading">
                     <div style="text-align: center">
-                        <h1>Add Quest</h1>
-                        <input type="text" v-model="name" placeholder="Quest Name" /><br/>
-                        <input type="text" v-model="description" placeholder="Quest Description" /><br/><br/>
+                        <h1>Delete Location?</h1>
                     </div>
                     <svg height="5" width="100%" class="tapered-rule">
                         <polyline points="0,0 400,2.5 0,5"></polyline>
                     </svg>
                 </div>
                 <div style="text-align: center">
-                    <button v-on:click="postQuest">Done</button>
+                    <button v-on:click="deleteLocation">Delete</button>
+                    <button v-on:click="cancel">Cancel</button>
                 </div>
             </div>
             <hr class="orange-border bottom" />
@@ -26,20 +25,18 @@
     import axios from 'axios';
 
     export default {
-        name: 'AddQuest',
-        data: function () {
-            return {
-                name: null,
-                description: null
-            }
+        name: 'DeleteLocation',
+        props: {
+            locationId: String
         },
         methods: {
-            postQuest: function () {
+            deleteLocation: function () {
                 axios
-                    .post('http://localhost:3000/quests', {
-                        name: this.name,
-                        description: this.description
-                    })
+                    .delete('http://localhost:3000/locations/' + this.locationId);
+                this.$emit('changeToggle', 'locations');
+            },
+            cancel: function () {
+                this.$emit('changeToggle', 'locations');
             }
         }
     }
