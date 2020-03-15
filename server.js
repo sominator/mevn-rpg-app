@@ -24,6 +24,6 @@ server.use('/npcs', npcRouter);
 const questRouter = require(__dirname + '/routes/Quests');
 server.use('/quests', questRouter);
 
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 server.listen(port, () => console.log("Server started!"));
