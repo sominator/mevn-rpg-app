@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-const Npc = require(__dirname + '/models/Npc');
+const Npc = require('../models/Npc');
 
 router.get('/', async (req, res) => {
     try {
