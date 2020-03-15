@@ -15,13 +15,13 @@ server.use(express.json());
 server.use(cors());
 server.use(serveStatic(__dirname + "/client/dist"));
 
-const locationRouter = require(__dirname + '/routes/locations');
+const locationRouter = require(__dirname + '/routes/Locations');
 server.use('/locations', locationRouter);
 
-const npcRouter = require(__dirname + '/routes/npcs');
+const npcRouter = require(__dirname + '/routes/Npcs');
 server.use('/npcs', npcRouter);
 
-const questRouter = require(__dirname + '/routes/quests');
+const questRouter = require(__dirname + '/routes/Quests');
 server.use('/quests', questRouter);
 
 server.listen(3000, () => console.log("Server started!"));
