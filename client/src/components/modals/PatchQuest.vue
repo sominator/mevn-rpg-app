@@ -42,7 +42,7 @@
         methods: {
             patchQuest: function () {
                  axios
-                    .patch('http://localhost:3000/quests/' + this.questId, {
+                    .patch('http://gaming-mevn.herokuapp.com/quests/' + this.questId, {
                         name: this.newName,
                         description: this.newDescription
                     });

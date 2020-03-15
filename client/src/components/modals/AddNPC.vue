@@ -37,7 +37,7 @@
         methods: {
             postNpc: function () {
                 axios
-                    .post('http://localhost:3000/npcs', {
+                    .post('http://gaming-mevn.herokuapp.com/npcs', {
                         name: this.name,
                         description: this.description
                     });

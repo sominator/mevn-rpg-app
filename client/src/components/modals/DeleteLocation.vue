@@ -32,7 +32,7 @@
         methods: {
             deleteLocation: function () {
                 axios
-                    .delete('http://localhost:3000/locations/' + this.locationId);
+                    .delete('http://gaming-mevn.herokuapp.com/locations/' + this.locationId);
                 this.$emit('changeToggle', 'locations');
             },
             cancel: function () {

@@ -99,17 +99,17 @@
         methods: {
             getLocations: function () {
                 axios
-                    .get('http://localhost:3000/locations')
+                    .get('http://gaming-mevn.herokuapp.com/locations')
                     .then(response => (this.locationData = response.data))                    
             },
             getNpcs: function () {
                 axios
-                    .get('http://localhost:3000/npcs')
+                    .get('http://gaming-mevn.herokuapp.com/npcs')
                     .then(response => (this.npcData = response.data)) 
             },
             getQuests: function () {
                 axios
-                    .get('http://localhost:3000/quests')
+                    .get('http://gaming-mevn.herokuapp.com/quests')
                     .then(response => (this.questData = response.data))                    
             },
             getAll: function () {

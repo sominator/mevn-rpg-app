@@ -32,7 +32,7 @@
         methods: {
             deleteNpc: function () {
                 axios
-                    .delete('http://localhost:3000/npcs/' + this.npcId);
+                    .delete('http://gaming-mevn.herokuapp.com/npcs/' + this.npcId);
                 this.$emit('changeToggle', 'npcs');
             },
             cancel: function () {

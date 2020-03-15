@@ -42,7 +42,7 @@
         methods: {
             patchLocation: function () {
                  axios
-                    .patch('http://localhost:3000/locations/' + this.locationId, {
+                    .patch('http://gaming-mevn.herokuapp.com/locations/' + this.locationId, {
                         name: this.newName,
                         description: this.newDescription
                     });

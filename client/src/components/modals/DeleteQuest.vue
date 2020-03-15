@@ -32,7 +32,7 @@
         methods: {
             deleteQuest: function () {
                 axios
-                    .delete('http://localhost:3000/quests/' + this.questId);
+                    .delete('http://gaming-mevn.herokuapp.com/quests/' + this.questId);
                 this.$emit('changeToggle', 'quests');
             },
             cancel: function () {
