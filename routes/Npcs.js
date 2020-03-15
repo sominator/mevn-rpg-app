@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Npc = require('../models/npc');
+const Npc = require('../models/Npc');
 
 router.get('/', async (req, res) => {
     try {

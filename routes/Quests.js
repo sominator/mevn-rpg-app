@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Quest = require('../models/quest');
+const Quest = require('../models/Quest');
 
 router.get('/', async (req, res) => {
     try {
