@@ -37,7 +37,7 @@
         methods: {
             postQuest: function () {
                 axios
-                    .post('http://gaming-mevn.herokuapp.com/quests', {
+                    .post('https://gaming-mevn.herokuapp.com/quests', {
                         name: this.name,
                         description: this.description
                     });

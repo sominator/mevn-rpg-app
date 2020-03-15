@@ -37,7 +37,7 @@
         methods: {
             postLocation: function () {
                 axios
-                    .post('http://gaming-mevn.herokuapp.com/locations', {
+                    .post('https://gaming-mevn.herokuapp.com/locations', {
                         name: this.name,
                         description: this.description
                     });

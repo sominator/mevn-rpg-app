@@ -42,7 +42,7 @@
         methods: {
             patchNpc: function () {
                  axios
-                    .patch('http://gaming-mevn.herokuapp.com/npcs/' + this.npcId, {
+                    .patch('https://gaming-mevn.herokuapp.com/npcs/' + this.npcId, {
                         name: this.newName,
                         description: this.newDescription
                     });
