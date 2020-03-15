@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Quest = require('../models/Quest');
+const path = require('path');
+const Quest = require(__dirname + '../models/Quest');
 
 router.get('/', async (req, res) => {
     try {
