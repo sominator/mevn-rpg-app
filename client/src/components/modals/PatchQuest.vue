@@ -42,7 +42,7 @@
         methods: {
             patchQuest: function () {
                  axios
-                    .patch('https://gaming-mevn.herokuapp.com/quests/' + this.questId, {
+                    .patch('https://mevn-rpg-app.herokuapp.com/quests/' + this.questId, {
                         name: this.newName,
                         description: this.newDescription
                     });

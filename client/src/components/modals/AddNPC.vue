@@ -37,7 +37,7 @@
         methods: {
             postNpc: function () {
                 axios
-                    .post('https://gaming-mevn.herokuapp.com/npcs', {
+                    .post('https://mevn-rpg-app.herokuapp.com/npcs', {
                         name: this.name,
                         description: this.description
                     });

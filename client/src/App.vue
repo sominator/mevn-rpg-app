@@ -84,17 +84,17 @@
         methods: {
             getLocations: function () {
                 axios
-                    .get('https://gaming-mevn.herokuapp.com/locations')
+                    .get('https://mevn-rpg-app.herokuapp.com/locations')
                     .then(response => (this.locationData = response.data))                    
             },
             getNpcs: function () {
                 axios
-                    .get('https://gaming-mevn.herokuapp.com/npcs')
+                    .get('https://mevn-rpg-app.herokuapp.com/npcs')
                     .then(response => (this.npcData = response.data)) 
             },
             getQuests: function () {
                 axios
-                    .get('https://gaming-mevn.herokuapp.com/quests')
+                    .get('https://mevn-rpg-app.herokuapp.com/quests')
                     .then(response => (this.questData = response.data))                    
             },
             getAll: function () {

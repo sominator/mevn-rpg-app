@@ -32,7 +32,7 @@
         methods: {
             deleteLocation: function () {
                 axios
-                    .delete('https://gaming-mevn.herokuapp.com/locations/' + this.locationId);
+                    .delete('https://mevn-rpg-app.herokuapp.com/locations/' + this.locationId);
                 this.$emit('changeToggle', 'locations');
             },
             cancel: function () {
