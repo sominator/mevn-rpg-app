@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\client\\src",
-    "\\client\\src\\components",
-    "\\client\\src\\components\\Modals",
-    "\\server\\models",
-    "\\server\\routes"
+    ""
   ],
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }
