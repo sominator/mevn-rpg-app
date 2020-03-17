@@ -1,16 +1,10 @@
 <template>
     <div id="app">
         <div v-bind:class="{'modal-showing': displayToggle==='modal'}">
-            <img id="logo" alt="DnD logo" src="https://i.etsystatic.com/15492164/r/il/f106ee/1903066961/il_570xN.1903066961_kh00.jpg">
-            <h1 style="margin-top: -40px; margin-bottom: 30px">Keep on the BrianLands</h1>
-            <button v-on:click="displayToggle='stats'">Party Stats</button>
-            <button v-on:click="displayToggle='characters'">Character Stats</button>
+            <h1 style="margin-bottom: 20px">Roleplaying Game Tracker</h1>
             <button v-on:click="displayToggle='npcs'">NPCs</button>
             <button v-on:click="displayToggle='locations'">Locations</button>
             <button v-on:click="displayToggle='quests'; getQuests()">Quests</button>
-            <button v-on:click="displayToggle='map'">Map</button>
-            <Stats v-show="displayToggle === 'stats'" :characterData=characterData />
-            <Characters v-show="displayToggle === 'characters'" :characterData=characterData />
             <div v-show="displayToggle === 'locations'">
                 <button v-on:click="displayToggle = 'modal'; modalToggle = 'addLocation'">Add Location</button>
                 <div class="journal">
@@ -29,9 +23,6 @@
                     <Quest v-for="quest in questData" :key="quest._id" :quest="quest" @deleteQuest="deleteQuest" @patchQuest="patchQuest" />
                 </div>
             </div>
-            <div v-show="displayToggle === 'map'">
-                <img src="./Map.jpg" id="map" />
-            </div>
         </div>
         <div class="modal" v-show="displayToggle === 'modal'">
             <AddLocation v-show="modalToggle === 'addLocation'" @changeToggle="changeToggle" />
@@ -48,8 +39,6 @@
 </template>
 
 <script>
-    import Characters from './components/Characters.vue';
-    import Stats from './components/Stats.vue';
     import Location from "./components/Location.vue";
     import NPC from './components/NPC.vue';
     import Quest from "./components/Quest.vue";
@@ -62,14 +51,11 @@
     import PatchLocation from "./components/modals/PatchLocation.vue";
     import PatchNPC from "./components/modals/PatchNPC.vue";
     import PatchQuest from "./components/modals/PatchQuest.vue";
-    import json from './Data.json';
     import axios from 'axios'
 
     export default {
         name: 'app',
         components: {
-            Characters,
-            Stats,
             Location,
             NPC,
             Quest,
@@ -85,9 +71,8 @@
         },
         data: function () {
             return {
-                displayToggle: "stats",
+                displayToggle: "npcs",
                 modalToggle: "",
-                characterData: json.characters,
                 locationData: null,
                 locationId: null,
                 npcData: null,
@@ -166,7 +151,6 @@
         font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
         text-align: center;
         color: #2c3e50;
-        margin-top: -60px;
         font-size: 30px;
     }
     h1 {
